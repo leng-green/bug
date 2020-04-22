@@ -37,12 +37,13 @@ public class RoomInfoServiceImpl implements RoomInfoService {
     //更新数据
     @Override
     public RoomInfo updInfo(RoomInfo roomInfo) {
-        RoomInfo one = roomInfoDao.findOne(roomInfo.getId());
-        if (one==null){
+        RoomInfo old = roomInfoDao.findOne(roomInfo.getId());
+        if (old==null){
             throw new SpcCloudException(ReserveErrorCodeEnum.RL10020001,roomInfo.getId());
         }else{
             //合并数据
             //怎么说
+            //新的东西
             return  roomInfoDao.saveRoomInfo(roomInfo);
         }
 
