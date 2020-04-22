@@ -42,7 +42,6 @@ public class RoomInfoServiceImpl implements RoomInfoService {
             throw new SpcCloudException(ReserveErrorCodeEnum.RL10020001,roomInfo.getId());
         }else{
             //合并数据
-            //怎么说
             return  roomInfoDao.saveRoomInfo(roomInfo);
         }
 
